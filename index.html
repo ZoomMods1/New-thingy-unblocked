@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Dashboard | Celestial</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">🚀 SPACE</div>
+        <div class="tab-list">
+            <button class="tab-btn active" onclick="openTab('home')">Home</button>
+            <button class="tab-btn" onclick="openTab('proxy')">Proxy</button>
+            <button class="tab-btn" onclick="openTab('games')">Games</button>
+            <button class="tab-btn" onclick="addTab()">+ New Tab</button>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div id="home" class="tab-content active">
+            <h1>Welcome to Space</h1>
+            <p>Select a tab to begin.</p>
+        </div>
+        
+        <div id="proxy" class="tab-content">
+            <div class="address-bar">
+                <input type="text" id="url-input" placeholder="Search or enter URL...">
+                <button onclick="launchProxy()">Go</button>
+            </div>
+            <iframe id="proxy-frame" src="about:blank"></iframe>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
