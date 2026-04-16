@@ -17,33 +17,40 @@
 
     <div id="main-ui" style="display: none;">
         <aside class="sidebar">
-            <div class="side-icon active"><svg viewBox="0 0 24 24" width="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
-            <div class="side-icon"><svg viewBox="0 0 24 24" width="22" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h.01M9 12h.01M15 12h.01M18 12h.01"/></svg></div>
-            <div class="side-icon"><svg viewBox="0 0 24 24" width="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg></div>
-            <div class="side-icon"><svg viewBox="0 0 24 24" width="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
-            <div class="side-icon settings-btn"><svg viewBox="0 0 24 24" width="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
+            <div class="side-icon active" onclick="showTab('home')"><svg viewBox="0 0 24 24" width="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+            <div class="side-icon" onclick="showTab('games')"><svg viewBox="0 0 24 24" width="22" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h.01M9 12h.01M15 12h.01M18 12h.01"/></svg></div>
+            <div class="side-icon" onclick="showTab('media')"><svg viewBox="0 0 24 24" width="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg></div>
+            <div class="side-icon" onclick="showTab('settings')"><svg viewBox="0 0 24 24" width="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
         </aside>
 
         <main class="content">
-            <h1 class="logo-text">space.</h1>
-            <div class="search-container">
-                <input type="text" id="url-input" placeholder="search with ease (internal)" onkeydown="if(event.key==='Enter') launchProxy()">
+            <div id="tab-home" class="tab-content active">
+                <h1 class="logo-text">space.</h1>
+                <div class="search-container">
+                    <input type="text" id="url-input" placeholder="search with ease (internal)" onkeydown="if(event.key==='Enter') launchProxy()">
+                </div>
+                <div class="icon-nav">
+                    <div class="nav-item" onclick="showTab('games')">
+                        <div class="circle"><svg viewBox="0 0 24 24" width="24" fill="currentColor"><path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4-3c-.83 0-1.5-.67-1.5-1.5S18.17 9 19 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg></div>
+                        <span>games</span>
+                    </div>
+                    </div>
             </div>
-            
-            <div class="icon-nav">
-                <div class="nav-item">
-                    <div class="circle"><svg viewBox="0 0 24 24" width="24" fill="currentColor"><path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4-3c-.83 0-1.5-.67-1.5-1.5S18.17 9 19 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg></div>
-                    <span>games</span>
-                </div>
-                <div class="nav-item">
-                    <div class="circle"><svg viewBox="0 0 24 24" width="24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
-                    <span>quick apps</span>
-                </div>
-                <div class="nav-item">
-                    <div class="circle"><svg viewBox="0 0 24 24" width="24" fill="currentColor"><path d="M18 3v2h-2V3H8v2H6V3H4v18h2v-2h2v2h8v-2h2v2h2V3h-2zM8 17H6v-2h2v2zm0-4H6v-2h2v2zm0-4H6V7h2v2zm10 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z"/></svg></div>
-                    <span>media</span>
+
+            <div id="tab-games" class="tab-content">
+                <h2>All Games</h2>
+                <div class="game-grid">
+                    <div class="game-card" onclick="alert('Game loading...')">
+                        <div class="card-img"></div>
+                        <span>Pandemic 2</span>
+                    </div>
                 </div>
             </div>
+
+            <div id="tab-proxy" class="tab-content" style="padding: 0; width: 100%; height: 100%;">
+                <iframe id="proxy-frame" style="width: 100%; height: 100%; border: none; background: #fff;"></iframe>
+            </div>
+
             <div class="version">v2.8.0</div>
         </main>
     </div>
@@ -52,16 +59,30 @@
     <script src="uv/uv.config.js"></script>
     <script>
         const PASS = "Spaceistuff";
+
         function checkPassword() {
-            const input = document.getElementById('password-input').value;
-            if (input === PASS) {
+            if (document.getElementById('password-input').value === PASS) {
                 document.getElementById('login-screen').style.display = 'none';
                 document.getElementById('main-ui').style.display = 'flex';
-            } else { alert("Incorrect password."); }
+            }
         }
+
+        function showTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.getElementById('tab-' + tabId).classList.add('active');
+        }
+
         function launchProxy() {
             const val = document.getElementById('url-input').value;
-            if (val) window.location.href = __uv$config.prefix + __uv$config.encodeUrl(val);
+            if (val) {
+                let url = val.trim();
+                if (!url.includes('.')) url = 'https://www.google.com/search?q=' + url;
+                else if (!url.startsWith('http')) url = 'https://' + url;
+
+                const frame = document.getElementById('proxy-frame');
+                frame.src = __uv$config.prefix + __uv$config.encodeUrl(url);
+                showTab('proxy');
+            }
         }
     </script>
 </body>
