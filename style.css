@@ -1,90 +1,117 @@
 body {
     margin: 0;
-    background-color: #050505;
-    color: white;
-    font-family: sans-serif;
+    background: #000;
+    color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
     height: 100vh;
     overflow: hidden;
 }
 
-/* Sidebar Styling */
+#login-screen {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    z-index: 999;
+}
+
+.login-box {
+    background: #080808;
+    padding: 50px;
+    border-radius: 16px;
+    border: 1px solid #111;
+    text-align: center;
+}
+
 .sidebar {
-    width: 70px;
-    height: 100vh;
-    background: #0a0a0a;
+    width: 65px;
+    background: #050505;
+    border-right: 1px solid #111;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 20px;
-    border-right: 1px solid #1a1a1a;
+    padding-top: 25px;
 }
 
 .side-icon {
-    font-size: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     color: #444;
     cursor: pointer;
+    transition: 0.2s;
 }
 
-.side-icon.active { color: #fff; }
+.side-icon.active, .side-icon:hover { color: #fff; }
 
-/* Center Hero Section */
 .content {
     flex: 1;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.hero { text-align: center; }
-
 .logo-text {
-    font-size: 80px;
-    margin-bottom: 20px;
-    font-weight: bold;
+    font-size: 110px;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+    letter-spacing: -2px;
 }
 
-.search-bar-container {
-    background: #151515;
+.search-container {
+    background: #0a0a0a;
+    border: 1px solid #151515;
     border-radius: 12px;
-    padding: 15px 25px;
-    width: 450px;
-    margin: 0 auto 40px;
-    border: 1px solid #222;
+    width: 480px;
+    padding: 2px 20px;
+    margin-bottom: 40px;
 }
 
-input#url-input {
+.search-container input {
     background: transparent;
     border: none;
-    color: white;
+    color: #fff;
     width: 100%;
+    padding: 15px 0;
     outline: none;
-    font-size: 16px;
+    font-size: 15px;
 }
 
-/* Icon Grid */
-.icon-grid {
+.icon-nav {
     display: flex;
-    justify-content: center;
-    gap: 40px;
+    gap: 45px;
 }
 
-.grid-item {
+.nav-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    color: #888;
+    gap: 12px;
+    color: #555;
+    font-size: 13px;
+    cursor: pointer;
 }
 
-.circle-icon {
-    width: 50px;
-    height: 50px;
-    background: #151515;
+.circle {
+    width: 55px;
+    height: 55px;
+    background: #0a0a0a;
+    border: 1px solid #151515;
     border-radius: 50%;
     display: flex;
-    align-items: center;
     justify-content: center;
-    font-size: 20px;
-    border: 1px solid #222;
+    align-items: center;
+    color: #fff;
+    transition: 0.2s;
+}
+
+.nav-item:hover .circle { border-color: #333; background: #111; }
+
+.version {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: #222;
+    font-size: 12px;
 }
