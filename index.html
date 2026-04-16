@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Space | Celestial</title>
+    <title>Space</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
@@ -12,47 +13,57 @@
         <div class="login-box">
             <h1>space.</h1>
             <input type="password" id="password-input" placeholder="Enter Password">
-            <button id="login-btn">Enter</button>
+            <button onclick="checkPassword()">Enter</button>
         </div>
     </div>
 
     <div id="main-ui" style="display: none;">
-        <nav class="navbar">
-            <span class="logo">SPACE</span>
-            <div class="nav-links">
-                <a href="#">Games</a>
-                <a href="#">Settings</a>
+        
+        <aside class="sidebar">
+            <div class="side-icon active"><i class="fa-solid fa-house"></i></div>
+            <div class="side-icon"><i class="fa-solid fa-gamepad"></i></div>
+            <div class="side-icon"><i class="fa-solid fa-clapperboard"></i></div>
+            <div class="side-icon"><i class="fa-solid fa-compass"></i></div>
+            <div class="side-icon"><i class="fa-solid fa-gear"></i></div>
+        </aside>
+
+        <main class="content">
+            <div class="hero">
+                <h1 class="logo-text">space.</h1>
+                <div class="search-bar-container">
+                    <input type="text" id="url-input" placeholder="search with ease (internal)">
+                </div>
+                
+                <div class="icon-grid">
+                    <div class="grid-item">
+                        <div class="circle-icon"><i class="fa-solid fa-gamepad"></i></div>
+                        <span>games</span>
+                    </div>
+                    <div class="grid-item">
+                        <div class="circle-icon"><i class="fa-solid fa- rocket"></i></div>
+                        <span>quick apps</span>
+                    </div>
+                    <div class="grid-item">
+                        <div class="circle-icon"><i class="fa-solid fa-video"></i></div>
+                        <span>media</span>
+                    </div>
+                </div>
             </div>
-        </nav>
-        <div class="hero">
-            <h1>Celestial</h1>
-            <div class="search-container">
-                <input type="text" id="url-input" placeholder="Explore the cosmos...">
-                <button onclick="launchProxy()">Launch</button>
-            </div>
-        </div>
+        </main>
     </div>
 
+    <script src="uv/uv.bundle.js"></script>
+    <script src="uv/uv.config.js"></script>
     <script>
-        // THE PASSWORD CHECK
-        const CORRECT_PASS = "Spaceistuff"; 
+        const PASS = "Spaceistuff";
 
-        document.getElementById('login-btn').addEventListener('click', function() {
+        function checkPassword() {
             const input = document.getElementById('password-input').value;
-            
-            if (input === CORRECT_PASS) {
+            if (input === PASS) {
                 document.getElementById('login-screen').style.display = 'none';
-                document.getElementById('main-ui').style.display = 'block';
-                document.body.style.backgroundColor = "#0b0b0e"; // Forces dark mode
+                document.getElementById('main-ui').style.display = 'flex';
             } else {
-                alert("Incorrect Password!");
-            }
-        });
-
-        function launchProxy() {
-            const val = document.getElementById('url-input').value;
-            if (val) {
-                window.location.href = "/service/" + btoa(val);
+                alert("Access Denied");
             }
         }
     </script>
