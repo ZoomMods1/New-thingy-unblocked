@@ -3,69 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Space</title>
+    <title>Space | v2.8.0</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-
     <div id="login-screen">
         <div class="login-box">
             <h1>space.</h1>
             <input type="password" id="password-input" placeholder="Enter Password">
-            <button onclick="checkPassword()">Enter</button>
+            <button onclick="login()">Enter</button>
         </div>
     </div>
 
     <div id="main-ui" style="display: none;">
-        
         <aside class="sidebar">
-            <div class="side-icon active"><i class="fa-solid fa-house"></i></div>
-            <div class="side-icon"><i class="fa-solid fa-gamepad"></i></div>
-            <div class="side-icon"><i class="fa-solid fa-clapperboard"></i></div>
-            <div class="side-icon"><i class="fa-solid fa-compass"></i></div>
-            <div class="side-icon"><i class="fa-solid fa-gear"></i></div>
+            <div class="side-icon active" onclick="showSection('home')"><svg viewBox="0 0 24 24" width="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+            <div class="side-icon" onclick="showSection('games')"><svg viewBox="0 0 24 24" width="24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h.01M9 12h.01M15 12h.01M18 12h.01"/></svg></div>
+            <div class="side-icon" onclick="showSection('media')"><svg viewBox="0 0 24 24" width="24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/></svg></div>
+            <div class="side-icon" onclick="showSection('settings')"><svg viewBox="0 0 24 24" width="24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
         </aside>
 
-        <main class="content">
-            <div class="hero">
+        <main class="viewport">
+            <section id="home" class="active">
                 <h1 class="logo-text">space.</h1>
-                <div class="search-bar-container">
-                    <input type="text" id="url-input" placeholder="search with ease (internal)">
+                <div class="search-box">
+                    <input type="text" id="url-input" placeholder="search with ease (internal)" onkeydown="if(event.key==='Enter') launchProxy()">
                 </div>
-                
-                <div class="icon-grid">
-                    <div class="grid-item">
-                        <div class="circle-icon"><i class="fa-solid fa-gamepad"></i></div>
+                <div class="icon-nav">
+                    <div class="nav-item" onclick="showSection('games')">
+                        <div class="circle"><svg viewBox="0 0 24 24" width="24" fill="currentColor"><path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4-3c-.83 0-1.5-.67-1.5-1.5S18.17 9 19 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg></div>
                         <span>games</span>
                     </div>
-                    <div class="grid-item">
-                        <div class="circle-icon"><i class="fa-solid fa- rocket"></i></div>
-                        <span>quick apps</span>
-                    </div>
-                    <div class="grid-item">
-                        <div class="circle-icon"><i class="fa-solid fa-video"></i></div>
-                        <span>media</span>
+                </div>
+            </section>
+
+            <section id="games">
+                <h2>All Games</h2>
+                <div class="game-grid">
+                    <div class="game-card" onclick="playGame('pandemic2')">
+                        <img src="https://via.placeholder.com/150" alt="Pandemic 2">
+                        <span>Pandemic 2</span>
                     </div>
                 </div>
-            </div>
+            </section>
         </main>
     </div>
 
     <script src="uv/uv.bundle.js"></script>
     <script src="uv/uv.config.js"></script>
-    <script>
-        const PASS = "Spaceistuff";
-
-        function checkPassword() {
-            const input = document.getElementById('password-input').value;
-            if (input === PASS) {
-                document.getElementById('login-screen').style.display = 'none';
-                document.getElementById('main-ui').style.display = 'flex';
-            } else {
-                alert("Access Denied");
-            }
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
