@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Celestial | Space</title>
+    <title>Space | Celestial</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,21 +12,20 @@
         <div class="login-box">
             <h1>space.</h1>
             <input type="password" id="password-input" placeholder="Enter Password">
-            <button onclick="checkPassword()">Enter</button>
+            <button id="login-btn">Enter</button>
         </div>
     </div>
 
     <div id="main-ui" style="display: none;">
         <nav class="navbar">
-            <div class="nav-left"><span class="logo">SPACE</span></div>
+            <span class="logo">SPACE</span>
             <div class="nav-links">
-                <a href="#" onclick="alert('Games coming soon!')">Games</a>
-                <a href="#" onclick="alert('Settings coming soon!')">Settings</a>
+                <a href="#">Games</a>
+                <a href="#">Settings</a>
             </div>
         </nav>
-
         <div class="hero">
-            <h1 class="glitch-text">Celestial</h1>
+            <h1>Celestial</h1>
             <div class="search-container">
                 <input type="text" id="url-input" placeholder="Explore the cosmos...">
                 <button onclick="launchProxy()">Launch</button>
@@ -35,23 +34,24 @@
     </div>
 
     <script>
-        // Use the password you want here
-        const PASS = "space"; 
+        // THE PASSWORD CHECK
+        const CORRECT_PASS = "Spaceistuff"; 
 
-        function checkPassword() {
+        document.getElementById('login-btn').addEventListener('click', function() {
             const input = document.getElementById('password-input').value;
-            if (input === PASS) {
+            
+            if (input === CORRECT_PASS) {
                 document.getElementById('login-screen').style.display = 'none';
                 document.getElementById('main-ui').style.display = 'block';
+                document.body.style.backgroundColor = "#0b0b0e"; // Forces dark mode
             } else {
-                alert("Wrong password!");
+                alert("Incorrect Password!");
             }
-        }
+        });
 
         function launchProxy() {
             const val = document.getElementById('url-input').value;
-            if(val) {
-                // This will redirect to your UV proxy path
+            if (val) {
                 window.location.href = "/service/" + btoa(val);
             }
         }
