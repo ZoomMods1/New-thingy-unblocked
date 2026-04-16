@@ -1,57 +1,62 @@
+:root {
+    --primary-glow: #7289da;
+    --glass-bg: rgba(255, 255, 255, 0.03);
+}
+
 body {
-    background: #0b0b0e;
-    color: white;
-    font-family: 'Segoe UI', sans-serif;
-    margin: 0;
+    background: radial-gradient(circle at center, #1a1a2e 0%, #070707 100%);
+    overflow: hidden;
+}
+
+.navbar {
     display: flex;
-    height: 100vh;
+    justify-content: space-between;
+    padding: 20px 50px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.sidebar {
-    width: 200px;
-    background: rgba(20, 20, 25, 0.8);
-    backdrop-filter: blur(10px);
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 20px;
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
 }
 
-.tab-btn {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 10px;
-    background: transparent;
+.search-container {
+    background: var(--glass-bg);
+    padding: 10px;
+    border-radius: 50px;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 20px rgba(114, 137, 218, 0.2);
+    width: 500px;
+    display: flex;
+}
+
+input#url-input {
+    background: transparent;
+    border: none;
+    flex: 1;
     color: white;
+    padding: 15px 25px;
+    font-size: 1.1rem;
+    outline: none;
+}
+
+button {
+    background: var(--primary-glow);
+    border: none;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 50px;
     cursor: pointer;
-    border-radius: 8px;
+    font-weight: bold;
     transition: 0.3s;
 }
 
-.tab-btn.active, .tab-btn:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: #7289da;
-}
-
-.main-content {
-    flex-grow: 1;
-    position: relative;
-}
-
-.tab-content {
-    display: none;
-    height: 100%;
-    padding: 20px;
-}
-
-.tab-content.active {
-    display: flex;
-    flex-direction: column;
-}
-
-iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-    border-radius: 12px;
-    background: white;
+button:hover {
+    box-shadow: 0 0 15px var(--primary-glow);
+    transform: scale(1.05);
 }
