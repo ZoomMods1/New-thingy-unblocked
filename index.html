@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <div id="login-screen">
         <div class="login-box">
             <h1>space.</h1>
@@ -19,14 +20,13 @@
         <nav class="navbar">
             <div class="nav-left"><span class="logo">SPACE</span></div>
             <div class="nav-links">
-                <a href="#" onclick="openTab('home')">Home</a>
-                <a href="#" onclick="openTab('games')">Games</a>
-                <a href="#" onclick="openTab('settings')">Settings</a>
+                <a href="#" onclick="alert('Games coming soon!')">Games</a>
+                <a href="#" onclick="alert('Settings coming soon!')">Settings</a>
             </div>
         </nav>
 
         <div class="hero">
-            <h1 class="glitch-text">Space</h1>
+            <h1 class="glitch-text">Celestial</h1>
             <div class="search-container">
                 <input type="text" id="url-input" placeholder="Explore the cosmos...">
                 <button onclick="launchProxy()">Launch</button>
@@ -34,8 +34,27 @@
         </div>
     </div>
 
-    <script src="uv/uv.bundle.js"></script>
-    <script src="uv/uv.config.js"></script>
-    <script src="script.js"></script>
+    <script>
+        // Use the password you want here
+        const PASS = "space"; 
+
+        function checkPassword() {
+            const input = document.getElementById('password-input').value;
+            if (input === PASS) {
+                document.getElementById('login-screen').style.display = 'none';
+                document.getElementById('main-ui').style.display = 'block';
+            } else {
+                alert("Wrong password!");
+            }
+        }
+
+        function launchProxy() {
+            const val = document.getElementById('url-input').value;
+            if(val) {
+                // This will redirect to your UV proxy path
+                window.location.href = "/service/" + btoa(val);
+            }
+        }
+    </script>
 </body>
 </html>
